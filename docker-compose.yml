@@ -1,0 +1,92 @@
+# Quest Campus — lancement complet : docker compose up --build
+# 1 front (React + nginx) -> 1 BFF (TypeScript) -> 2 API (Python), chacune avec SA base PostgreSQL.
+name: questcampus
+
+services:
+  auth-db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: auth_db
+      POSTGRES_USER: auth
+      POSTGRES_PASSWORD: ${AUTH_DB_PASSWORD:-auth_dev_password}
+    volumes:
+      - auth-data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"   # exposé uniquement pour inspecter la base pendant la démo
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U auth -d auth_db"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    networks: [auth-net]
+
+  quests-db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: quests_db
+      POSTGRES_USER: quests
+      POSTGRES_PASSWORD: ${QUESTS_DB_PASSWORD:-quests_dev_password}
+    volumes:
+      - quests-data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U quests -d quests_db"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    networks: [quests-net]
+
+  auth-api:
+    build: ./services/auth-api
+    environment:
+      DATABASE_URL: postgresql+psycopg://auth:${AUTH_DB_PASSWORD:-auth_dev_password}@auth-db:5432/auth_db
+      JWT_SIGNING_KEY: ${JWT_SIGNING_KEY:?Définissez JWT_SIGNING_KEY dans .env}
+    depends_on:
+      auth-db:
+        condition: service_healthy
+    networks: [auth-net, backend]
+
+  quests-api:
+    build: ./services/quests-api
+    environment:
+      DATABASE_URL: postgresql+psycopg://quests:${QUESTS_DB_PASSWORD:-quests_dev_password}@quests-db:5432/quests_db
+      JWT_SIGNING_KEY: ${JWT_SIGNING_KEY:?Définissez JWT_SIGNING_KEY dans .env}
+    depends_on:
+      quests-db:
+        condition: service_healthy
+    networks: [quests-net, backend]
+
+  bff:
+    build: ./services/bff
+    environment:
+      PORT: "8080"
+      AUTH_API_URL: http://auth-api:8000
+      QUESTS_API_URL: http://quests-api:8000
+      JWT_SIGNING_KEY: ${JWT_SIGNING_KEY:?Définissez JWT_SIGNING_KEY dans .env}
+    depends_on:
+      - auth-api
+      - quests-api
+    networks: [backend, frontend]
+
+  web:
+    build:
+      context: ./frontend/questcampus-web
+      args:
+        VITE_DEMO_MODE: ${DEMO_MODE:-true}
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    depends_on:
+      - bff
+    networks: [frontend]
+
+# Réseaux cloisonnés : le front ne voit que le BFF ; chaque API ne voit que SA base.
+networks:
+  frontend:
+  backend:
+  auth-net:
+  quests-net:
+
+volumes:
+  auth-data:
+  quests-data:

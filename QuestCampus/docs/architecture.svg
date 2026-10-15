@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs><marker id="ah" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="12" refY="6" orient="auto"><path d="M0,1 L12,6 L0,11 z" fill="#0f2a2e"/></marker><marker id="ah2" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" refX="2" refY="6" orient="auto"><path d="M12,1 L0,6 L12,12 z" fill="#0f2a2e"/></marker></defs>
+<rect width="1600" height="900" fill="#f6f1e7"/>
+<text x="40" y="58" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" fill="#0f2a2e" font-weight="800" text-anchor="start">Quest Campus — architecture</text>
+<text x="40" y="88" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#6d746f" font-weight="400" text-anchor="start">1 front · 1 BFF · 2 microservices · 2 bases PostgreSQL — Docker Compose, réseaux cloisonnés (chaque API ne voit que sa base)</text>
+<rect x="990" y="230" width="580" height="240" rx="18" fill="none" stroke="#9bb7a3" stroke-width="2" stroke-dasharray="4 5"/>
+<text x="1555" y="252" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#2f8a5b" font-weight="600" text-anchor="end">réseau auth-net</text>
+<rect x="990" y="490" width="580" height="350" rx="18" fill="none" stroke="#9db2cf" stroke-width="2" stroke-dasharray="4 5"/>
+<text x="1555" y="512" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#3b6ea8" font-weight="600" text-anchor="end">réseau quests-net</text>
+<rect x="40" y="350" width="220" height="190" rx="16" fill="#fff" stroke="#0f2a2e" stroke-width="2.5"/>
+<rect x="40" y="350" width="220" height="34" rx="16" fill="#0f2a2e"/><rect x="40" y="368" width="220" height="16" fill="#0f2a2e"/>
+<circle cx="62" cy="367" r="5" fill="#e46b55"/>
+<circle cx="80" cy="367" r="5" fill="#f2a93b"/>
+<circle cx="98" cy="367" r="5" fill="#5cb176"/>
+<text x="150" y="425" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" fill="#0f2a2e" font-weight="800" text-anchor="middle">Navigateur</text>
+<text x="150" y="450" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#6d746f" font-weight="400" text-anchor="middle">React + Vite (SPA)</text>
+<text x="150" y="480" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#0f2a2e" font-weight="600" text-anchor="middle">Géolocalisation</text>
+<text x="150" y="500" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#0f2a2e" font-weight="600" text-anchor="middle">SignalR client</text>
+<text x="150" y="520" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#2f8a5b" font-weight="700" text-anchor="middle">aucun jeton en JS</text>
+<rect x="320" y="370" width="200" height="150" rx="16" fill="#fff" stroke="#d9cfba" stroke-width="2"/>
+<text x="420" y="415" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" fill="#0f2a2e" font-weight="800" text-anchor="middle">web</text>
+<text x="420" y="440" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#6d746f" font-weight="400" text-anchor="middle">nginx</text>
+<text x="420" y="468" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#0f2a2e" font-weight="500" text-anchor="middle">fichiers statiques</text>
+<text x="420" y="488" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#0f2a2e" font-weight="500" text-anchor="middle">proxy /bff /api /hubs</text>
+<line x1="262" y1="445" x2="316" y2="445" stroke="#0f2a2e" stroke-width="3" marker-end="url(#ah)"/>
+<text x="289" y="425" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="700" text-anchor="middle">:8080</text>
+<rect x="580" y="250" width="330" height="400" rx="18" fill="#0f2a2e" stroke="#0f2a2e" stroke-width="2"/>
+<text x="745" y="292" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" fill="#fff" font-weight="800" text-anchor="middle">BFF</text>
+<text x="745" y="316" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#cfe3e1" font-weight="400" text-anchor="middle">ASP.NET Core · .NET 10</text>
+<rect x="605" y="340" width="280" height="30" rx="8" fill="#f2a93b" stroke="#d9cfba" stroke-width="1.5"/><text x="745.0" y="360" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="600" text-anchor="middle">Validation JWT (cookie HttpOnly)</text>
+<rect x="605" y="386" width="280" height="30" rx="8" fill="#f6f1e7" stroke="#d9cfba" stroke-width="1.5"/><text x="745.0" y="406" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="600" text-anchor="middle">YARP — reverse proxy</text>
+<rect x="605" y="432" width="280" height="30" rx="8" fill="#f6f1e7" stroke="#d9cfba" stroke-width="1.5"/><text x="745.0" y="452" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="600" text-anchor="middle">SignalR — /hubs/leaderboard</text>
+<rect x="605" y="478" width="280" height="30" rx="8" fill="#f6f1e7" stroke="#d9cfba" stroke-width="1.5"/><text x="745.0" y="498" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="600" text-anchor="middle">Agrégation — /bff/dashboard</text>
+<rect x="605" y="524" width="280" height="30" rx="8" fill="#f6f1e7" stroke="#d9cfba" stroke-width="1.5"/><text x="745.0" y="544" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="600" text-anchor="middle">Orchestration — tentatives</text>
+<rect x="605" y="570" width="280" height="30" rx="8" fill="#f6f1e7" stroke="#d9cfba" stroke-width="1.5"/><text x="745.0" y="590" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="600" text-anchor="middle">Rate limiting · ProblemDetails</text>
+<line x1="522" y1="445" x2="576" y2="445" stroke="#0f2a2e" stroke-width="3" marker-end="url(#ah)"/>
+<text x="546" y="425" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#6d746f" font-weight="700" text-anchor="middle">HTTP·WS</text>
+<rect x="1010" y="270" width="290" height="180" rx="16" fill="#fff" stroke="#2f8a5b" stroke-width="2.5"/>
+<text x="1155" y="308" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" fill="#0f2a2e" font-weight="800" text-anchor="middle">Auth API</text>
+<text x="1155" y="330" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#6d746f" font-weight="400" text-anchor="middle">minimal APIs</text>
+<rect x="1030" y="348" width="250" height="30" rx="8" fill="#f6f1e7" stroke="#d9cfba" stroke-width="1.5"/><text x="1155.0" y="368" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="600" text-anchor="middle">ASP.NET Core Identity</text>
+<rect x="1030" y="382" width="250" height="30" rx="8" fill="#f6f1e7" stroke="#d9cfba" stroke-width="1.5"/><text x="1155.0" y="402" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="600" text-anchor="middle">Émission JWT (HS256, 15 min)</text>
+<rect x="1030" y="416" width="250" height="30" rx="8" fill="#f6f1e7" stroke="#d9cfba" stroke-width="1.5"/><text x="1155.0" y="436" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="600" text-anchor="middle">Refresh tokens rotatifs</text>
+<path d="M1370,309 v102 a85.0,14 0 0 0 170,0 v-102" fill="#0f2a2e" stroke="#0f2a2e"/><ellipse cx="1455.0" cy="309" rx="85.0" ry="14" fill="#1d4248" stroke="#f2a93b" stroke-width="2"/><text x="1455.0" y="372.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700" text-anchor="middle">auth_db</text><text x="1455.0" y="394.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#cfe3e1" font-weight="400" text-anchor="middle">PostgreSQL 17</text>
+<line x1="1302" y1="360" x2="1366" y2="360" stroke="#0f2a2e" stroke-width="3" marker-end="url(#ah)"/>
+<text x="1334" y="345" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="600" text-anchor="middle">EF Core</text>
+<rect x="1010" y="530" width="290" height="290" rx="16" fill="#fff" stroke="#3b6ea8" stroke-width="2.5"/>
+<text x="1155" y="566" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="21" fill="#0f2a2e" font-weight="800" text-anchor="middle">Quests API (Métier)</text>
+<text x="1155" y="588" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#6d746f" font-weight="400" text-anchor="middle">Clean Architecture</text>
+<rect x="1030" y="604" width="250" height="42" rx="8" fill="#e8eef6" stroke="#d9cfba" stroke-width="1.5"/>
+<text x="1155" y="630" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="600" text-anchor="middle">Api — minimal APIs, JWT</text>
+<rect x="1030" y="656" width="250" height="42" rx="8" fill="#dfe8f3" stroke="#d9cfba" stroke-width="1.5"/>
+<text x="1155" y="682" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="600" text-anchor="middle">Application — cas d'usage, ports</text>
+<rect x="1030" y="708" width="250" height="42" rx="8" fill="#f9e6c4" stroke="#d9cfba" stroke-width="1.5"/>
+<text x="1155" y="734" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="600" text-anchor="middle">Domain — règle 30 m + réponse</text>
+<rect x="1030" y="760" width="250" height="42" rx="8" fill="#e8eef6" stroke="#d9cfba" stroke-width="1.5"/>
+<text x="1155" y="786" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="600" text-anchor="middle">Infrastructure — EF Core</text>
+<path d="M1370,614 v102 a85.0,14 0 0 0 170,0 v-102" fill="#0f2a2e" stroke="#0f2a2e"/><ellipse cx="1455.0" cy="614" rx="85.0" ry="14" fill="#1d4248" stroke="#f2a93b" stroke-width="2"/><text x="1455.0" y="677.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700" text-anchor="middle">quests_db</text><text x="1455.0" y="699.0" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#cfe3e1" font-weight="400" text-anchor="middle">PostgreSQL 17</text>
+<line x1="1302" y1="665" x2="1366" y2="665" stroke="#0f2a2e" stroke-width="3" marker-end="url(#ah)"/>
+<text x="1334" y="650" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="600" text-anchor="middle">EF Core</text>
+<line x1="912" y1="340" x2="1006" y2="340" stroke="#0f2a2e" stroke-width="3" marker-end="url(#ah)"/>
+<text x="958" y="316" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="700" text-anchor="middle">HTTP</text>
+<text x="958" y="330" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#6d746f" font-weight="500" text-anchor="middle">(login, profil)</text>
+<line x1="912" y1="610" x2="1006" y2="610" stroke="#0f2a2e" stroke-width="3" marker-end="url(#ah)"/>
+<text x="958" y="580" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="700" text-anchor="middle">HTTP +</text>
+<text x="958" y="596" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="700" text-anchor="middle">Bearer JWT</text>
+<text x="40" y="800" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#0f2a2e" font-weight="600" text-anchor="start">Le JWT est validé au BFF puis revalidé par l'API Métier (défense en profondeur).</text>
+<text x="40" y="825" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#0f2a2e" font-weight="600" text-anchor="start">L'API Métier ne stocke que des userId (claim sub) : aucune donnée d'authentification.</text>
+<text x="40" y="850" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#0f2a2e" font-weight="600" text-anchor="start">Seul le front (port 8080) est exposé ; les bases ne sont joignables que par leur service.</text>
+</svg>

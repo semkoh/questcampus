@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Couche Domaine : aucune dépendance externe (ni EF, ni ASP.NET). -->
+  <PropertyGroup>
+    <RootNamespace>QuestCampus.Quests.Domain</RootNamespace>
+  </PropertyGroup>
+</Project>

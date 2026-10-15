@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#f6f1e7"/>
+<defs><marker id="a" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto"><path d="M0,1 L12,6 L0,11 z" fill="#0f2a2e"/></marker></defs>
+<text x="40" y="58" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" fill="#0f2a2e" font-weight="800" text-anchor="start">Validation d'un checkpoint — séquence</text>
+<text x="40" y="88" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#6d746f" font-weight="400" text-anchor="start">Règle métier : réponse correcte ET distance haversine ≤ 30 m. Le classement est ensuite poussé en temps réel.</text>
+<rect x="45" y="115" width="190" height="46" rx="10" fill="#0f2a2e"/><text x="140" y="144" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#fff" font-weight="700" text-anchor="middle">Joueur (React)</text>
+<line x1="140" y1="161" x2="140" y2="870" stroke="#0f2a2e" stroke-width="2" stroke-dasharray="6 6" opacity=".5"/>
+<rect x="425" y="115" width="190" height="46" rx="10" fill="#0f2a2e"/><text x="520" y="144" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#fff" font-weight="700" text-anchor="middle">BFF</text>
+<line x1="520" y1="161" x2="520" y2="870" stroke="#0f2a2e" stroke-width="2" stroke-dasharray="6 6" opacity=".5"/>
+<rect x="805" y="115" width="190" height="46" rx="10" fill="#3b6ea8"/><text x="900" y="144" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#fff" font-weight="700" text-anchor="middle">Quests API</text>
+<line x1="900" y1="161" x2="900" y2="870" stroke="#3b6ea8" stroke-width="2" stroke-dasharray="6 6" opacity=".5"/>
+<rect x="1125" y="115" width="190" height="46" rx="10" fill="#3b6ea8"/><text x="1220" y="144" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#fff" font-weight="700" text-anchor="middle">quests_db</text>
+<line x1="1220" y1="161" x2="1220" y2="870" stroke="#3b6ea8" stroke-width="2" stroke-dasharray="6 6" opacity=".5"/>
+<rect x="1375" y="115" width="190" height="46" rx="10" fill="#2f8a5b"/><text x="1470" y="144" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#fff" font-weight="700" text-anchor="middle">Autres joueurs</text>
+<line x1="1470" y1="161" x2="1470" y2="870" stroke="#2f8a5b" stroke-width="2" stroke-dasharray="6 6" opacity=".5"/>
+<line x1="140" y1="200" x2="514" y2="200" stroke="#0f2a2e" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="330.0" y="191" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#0f2a2e" font-weight="700" text-anchor="middle">POST /bff/quests/{q}/checkpoints/{c}/attempts</text>
+<text x="330.0" y="218" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#6d746f" font-weight="400" text-anchor="middle">{ answer, latitude, longitude } + cookie HttpOnly</text>
+<rect x="380" y="252" width="280" height="82" rx="10" fill="#fff8e8" stroke="#f2a93b" stroke-width="2"/>
+<text x="394" y="278" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="700" text-anchor="start">BFF</text>
+<text x="394" y="300" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">1. valide le JWT (cookie)</text>
+<text x="394" y="322" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">2. rate limit : 10 / min / joueur</text>
+<line x1="520" y1="366" x2="894" y2="366" stroke="#0f2a2e" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="710.0" y="357" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#0f2a2e" font-weight="700" text-anchor="middle">POST /api/quests/{q}/checkpoints/{c}/attempts</text>
+<text x="710.0" y="384" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#6d746f" font-weight="400" text-anchor="middle">Authorization: Bearer &lt;JWT&gt;</text>
+<line x1="900" y1="428" x2="1214" y2="428" stroke="#3b6ea8" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="1060.0" y="419" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#3b6ea8" font-weight="700" text-anchor="middle">Quête + checkpoint, équipe du joueur</text>
+<text x="1060.0" y="446" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#6d746f" font-weight="400" text-anchor="middle">déjà validé par l'équipe ?</text>
+<rect x="700" y="480" width="400" height="82" rx="10" fill="#fff8e8" stroke="#f2a93b" stroke-width="2"/>
+<text x="714" y="506" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="700" text-anchor="start">Domaine : CheckpointValidationRule.Evaluate</text>
+<text x="714" y="528" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">distance = haversine(checkpoint, position)</text>
+<text x="714" y="550" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">validé = réponse normalisée égale ET distance ≤ 30 m</text>
+<line x1="900" y1="594" x2="1214" y2="594" stroke="#3b6ea8" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="1060.0" y="585" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#3b6ea8" font-weight="700" text-anchor="middle">INSERT Attempt (IsSuccess, DistanceMeters)</text>
+<text x="1060.0" y="612" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#6d746f" font-weight="400" text-anchor="middle">index unique partiel → pas de double score</text>
+<line x1="900" y1="656" x2="526" y2="656" stroke="#0f2a2e" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#a)"/>
+<text x="710.0" y="647" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#0f2a2e" font-weight="700" text-anchor="middle">200 { isValidated, distanceMeters, pointsAwarded, message }</text>
+<line x1="520" y1="706" x2="894" y2="706" stroke="#0f2a2e" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="710.0" y="697" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#0f2a2e" font-weight="700" text-anchor="middle">GET /api/quests/{q}/leaderboard</text>
+<text x="710.0" y="724" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#6d746f" font-weight="400" text-anchor="middle">seulement si isValidated</text>
+<line x1="520" y1="768" x2="1464" y2="768" stroke="#2f8a5b" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="995.0" y="759" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#2f8a5b" font-weight="700" text-anchor="middle">SignalR → groupe quest-{q} : LeaderboardUpdated</text>
+<line x1="520" y1="818" x2="146" y2="818" stroke="#0f2a2e" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#a)"/>
+<text x="330.0" y="809" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#0f2a2e" font-weight="700" text-anchor="middle">Résultat affiché (✔ réponse / ✔ position)</text>
+</svg>

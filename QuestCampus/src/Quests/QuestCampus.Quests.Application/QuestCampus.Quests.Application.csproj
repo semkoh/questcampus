@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Couche Application : cas d'usage + ports (interfaces). Dépend uniquement du Domaine. -->
+  <PropertyGroup>
+    <RootNamespace>QuestCampus.Quests.Application</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuestCampus.Quests.Domain\QuestCampus.Quests.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Seule dépendance externe : les abstractions d'injection de dépendances. -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+  </ItemGroup>
+</Project>

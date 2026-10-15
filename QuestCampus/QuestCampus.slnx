@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Auth/">
+    <Project Path="src/Auth/QuestCampus.Auth.Api/QuestCampus.Auth.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/Quests/">
+    <Project Path="src/Quests/QuestCampus.Quests.Domain/QuestCampus.Quests.Domain.csproj" />
+    <Project Path="src/Quests/QuestCampus.Quests.Application/QuestCampus.Quests.Application.csproj" />
+    <Project Path="src/Quests/QuestCampus.Quests.Infrastructure/QuestCampus.Quests.Infrastructure.csproj" />
+    <Project Path="src/Quests/QuestCampus.Quests.Api/QuestCampus.Quests.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/Bff/">
+    <Project Path="src/Bff/QuestCampus.Bff/QuestCampus.Bff.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/QuestCampus.Quests.Tests/QuestCampus.Quests.Tests.csproj" />
+  </Folder>
+</Solution>

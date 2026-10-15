@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <!-- Couche Api : minimal APIs, authentification JWT, traduction des erreurs en ProblemDetails. -->
+  <PropertyGroup>
+    <RootNamespace>QuestCampus.Quests.Api</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuestCampus.Quests.Infrastructure\QuestCampus.Quests.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+  </ItemGroup>
+</Project>

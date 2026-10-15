@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Couche Infrastructure : implémente les ports de l'Application avec EF Core + PostgreSQL. -->
+  <PropertyGroup>
+    <RootNamespace>QuestCampus.Quests.Infrastructure</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QuestCampus.Quests.Application\QuestCampus.Quests.Application.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+  </ItemGroup>
+</Project>

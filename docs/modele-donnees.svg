@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<rect width="1600" height="1000" fill="#f6f1e7"/>
+<text x="40" y="58" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" fill="#0f2a2e" font-weight="800" text-anchor="start">Quest Campus — modèle de données</text>
+<text x="40" y="88" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#6d746f" font-weight="400" text-anchor="start">Deux bases physiquement séparées (database per service). Aucune clé étrangère entre elles : le lien se fait par l'identifiant utilisateur porté par le JWT (claim « sub »).</text>
+<rect x="30" y="115" width="520" height="850" rx="20" fill="#eef5f0" stroke="#2f8a5b" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="50" y="148" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17" fill="#2f8a5b" font-weight="800" text-anchor="start">auth_db — API Auth (Python, SQLAlchemy)</text>
+<rect x="580" y="115" width="990" height="850" rx="20" fill="#edf2f8" stroke="#3b6ea8" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="600" y="148" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17" fill="#3b6ea8" font-weight="800" text-anchor="start">quests_db — API Métier (Python, SQLAlchemy, Clean Architecture)</text>
+<rect x="60" y="175" width="300" height="218" rx="12" fill="#fff" stroke="#2f8a5b" stroke-width="2"/>
+<path d="M60,187 a12,12 0 0 1 12,-12 h276 a12,12 0 0 1 12,12 v28 h-300 z" fill="#2f8a5b"/>
+<text x="74" y="202" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#fff" font-weight="800" text-anchor="start">users</text>
+<rect x="70" y="219" width="28" height="17" rx="4" fill="#f2a93b"/>
+<text x="84" y="232" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">PK</text>
+<text x="106" y="232" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="700" text-anchor="start">id</text>
+<text x="348" y="232" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<rect x="70" y="243" width="28" height="17" rx="4" fill="#9bb7a3"/>
+<text x="84" y="256" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">UQ</text>
+<text x="106" y="256" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">email</text>
+<text x="348" y="256" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">varchar(256)</text>
+<text x="106" y="280" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">password_hash</text>
+<text x="348" y="280" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">argon2</text>
+<text x="106" y="304" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">display_name</text>
+<text x="348" y="304" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">varchar(60)</text>
+<text x="106" y="328" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">failed_login_count</text>
+<text x="348" y="328" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">int</text>
+<text x="106" y="352" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">lockout_end</text>
+<text x="348" y="352" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">timestamptz?</text>
+<text x="106" y="376" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">created_at</text>
+<text x="348" y="376" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">timestamptz</text>
+<rect x="60" y="470" width="300" height="98" rx="12" fill="#fff" stroke="#2f8a5b" stroke-width="2"/>
+<path d="M60,482 a12,12 0 0 1 12,-12 h276 a12,12 0 0 1 12,12 v28 h-300 z" fill="#2f8a5b"/>
+<text x="74" y="497" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#fff" font-weight="800" text-anchor="start">roles</text>
+<rect x="70" y="514" width="28" height="17" rx="4" fill="#f2a93b"/>
+<text x="84" y="527" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">PK</text>
+<text x="106" y="527" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="700" text-anchor="start">id</text>
+<text x="348" y="527" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<rect x="70" y="538" width="28" height="17" rx="4" fill="#9bb7a3"/>
+<text x="84" y="551" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">UQ</text>
+<text x="106" y="551" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">name</text>
+<text x="348" y="551" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">Organisateur | Joueur</text>
+<rect x="60" y="610" width="300" height="98" rx="12" fill="#fff" stroke="#2f8a5b" stroke-width="2"/>
+<path d="M60,622 a12,12 0 0 1 12,-12 h276 a12,12 0 0 1 12,12 v28 h-300 z" fill="#2f8a5b"/>
+<text x="74" y="637" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#fff" font-weight="800" text-anchor="start">user_roles</text>
+<rect x="70" y="654" width="28" height="17" rx="4" fill="#9db2cf"/>
+<text x="84" y="667" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">FK</text>
+<text x="106" y="667" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">user_id</text>
+<text x="348" y="667" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<rect x="70" y="678" width="28" height="17" rx="4" fill="#9db2cf"/>
+<text x="84" y="691" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">FK</text>
+<text x="106" y="691" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">role_id</text>
+<text x="348" y="691" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<rect x="60" y="735" width="300" height="218" rx="12" fill="#fff" stroke="#2f8a5b" stroke-width="2"/>
+<path d="M60,747 a12,12 0 0 1 12,-12 h276 a12,12 0 0 1 12,12 v28 h-300 z" fill="#2f8a5b"/>
+<text x="74" y="762" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#fff" font-weight="800" text-anchor="start">refresh_tokens</text>
+<rect x="70" y="779" width="28" height="17" rx="4" fill="#f2a93b"/>
+<text x="84" y="792" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">PK</text>
+<text x="106" y="792" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="700" text-anchor="start">id</text>
+<text x="348" y="792" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<rect x="70" y="803" width="28" height="17" rx="4" fill="#9db2cf"/>
+<text x="84" y="816" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">FK</text>
+<text x="106" y="816" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">user_id</text>
+<text x="348" y="816" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<rect x="70" y="827" width="28" height="17" rx="4" fill="#9bb7a3"/>
+<text x="84" y="840" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">UQ</text>
+<text x="106" y="840" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">token_hash</text>
+<text x="348" y="840" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">char(64) SHA-256</text>
+<text x="106" y="864" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">created_at</text>
+<text x="348" y="864" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">timestamptz</text>
+<text x="106" y="888" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">expires_at</text>
+<text x="348" y="888" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">timestamptz</text>
+<text x="106" y="912" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">revoked_at</text>
+<text x="348" y="912" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">timestamptz?</text>
+<text x="106" y="936" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">replaced_by_token_hash</text>
+<text x="348" y="936" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">char(64)?</text>
+<polyline points="360,227 400,227 400,660 360,660" fill="none" stroke="#2f8a5b" stroke-width="2"/>
+<polyline points="360,520 390,520 390,684 360,684" fill="none" stroke="#2f8a5b" stroke-width="2"/>
+<polyline points="360,227 420,227 420,809 360,809" fill="none" stroke="#2f8a5b" stroke-width="2"/>
+<text x="440" y="430" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#2f8a5b" font-weight="700" text-anchor="start">1 — n</text>
+<rect x="620" y="175" width="300" height="194" rx="12" fill="#fff" stroke="#3b6ea8" stroke-width="2"/>
+<path d="M620,187 a12,12 0 0 1 12,-12 h276 a12,12 0 0 1 12,12 v28 h-300 z" fill="#3b6ea8"/>
+<text x="634" y="202" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#fff" font-weight="800" text-anchor="start">quests</text>
+<rect x="630" y="219" width="28" height="17" rx="4" fill="#f2a93b"/>
+<text x="644" y="232" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">PK</text>
+<text x="666" y="232" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="700" text-anchor="start">id</text>
+<text x="908" y="232" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<text x="666" y="256" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">title</text>
+<text x="908" y="256" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">varchar(120)</text>
+<text x="666" y="280" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">description</text>
+<text x="908" y="280" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">varchar(2000)</text>
+<rect x="630" y="291" width="28" height="17" rx="4" fill="#e8c6c0"/>
+<text x="644" y="304" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">ID</text>
+<text x="666" y="304" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">organizer_id</text>
+<text x="908" y="304" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid (userId)</text>
+<text x="666" y="328" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">is_published</text>
+<text x="908" y="328" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">bool</text>
+<text x="666" y="352" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">created_at</text>
+<text x="908" y="352" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">timestamptz</text>
+<rect x="620" y="450" width="300" height="266" rx="12" fill="#fff" stroke="#3b6ea8" stroke-width="2"/>
+<path d="M620,462 a12,12 0 0 1 12,-12 h276 a12,12 0 0 1 12,12 v28 h-300 z" fill="#3b6ea8"/>
+<text x="634" y="477" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#fff" font-weight="800" text-anchor="start">checkpoints</text>
+<rect x="630" y="494" width="28" height="17" rx="4" fill="#f2a93b"/>
+<text x="644" y="507" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">PK</text>
+<text x="666" y="507" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="700" text-anchor="start">id</text>
+<text x="908" y="507" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<rect x="630" y="518" width="28" height="17" rx="4" fill="#9db2cf"/>
+<text x="644" y="531" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">FK</text>
+<text x="666" y="531" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">quest_id</text>
+<text x="908" y="531" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<text x="666" y="555" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">order</text>
+<text x="908" y="555" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">int</text>
+<text x="666" y="579" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">title</text>
+<text x="908" y="579" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">varchar(120)</text>
+<text x="666" y="603" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">riddle</text>
+<text x="908" y="603" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">varchar(1000)</text>
+<text x="666" y="627" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">latitude</text>
+<text x="908" y="627" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">double</text>
+<text x="666" y="651" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">longitude</text>
+<text x="908" y="651" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">double</text>
+<text x="666" y="675" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">answer</text>
+<text x="908" y="675" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">varchar(200)</text>
+<text x="666" y="699" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">points</text>
+<text x="908" y="699" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">int 1–1000</text>
+<rect x="1000" y="175" width="300" height="170" rx="12" fill="#fff" stroke="#3b6ea8" stroke-width="2"/>
+<path d="M1000,187 a12,12 0 0 1 12,-12 h276 a12,12 0 0 1 12,12 v28 h-300 z" fill="#3b6ea8"/>
+<text x="1014" y="202" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#fff" font-weight="800" text-anchor="start">teams</text>
+<rect x="1010" y="219" width="28" height="17" rx="4" fill="#f2a93b"/>
+<text x="1024" y="232" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">PK</text>
+<text x="1046" y="232" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="700" text-anchor="start">id</text>
+<text x="1288" y="232" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<rect x="1010" y="243" width="28" height="17" rx="4" fill="#9db2cf"/>
+<text x="1024" y="256" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">FK</text>
+<text x="1046" y="256" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">quest_id</text>
+<text x="1288" y="256" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<text x="1046" y="280" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">name</text>
+<text x="1288" y="280" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">varchar(60)</text>
+<rect x="1010" y="291" width="28" height="17" rx="4" fill="#9bb7a3"/>
+<text x="1024" y="304" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">UQ</text>
+<text x="1046" y="304" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">invite_code</text>
+<text x="1288" y="304" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">char(6)</text>
+<text x="1046" y="328" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">created_at</text>
+<text x="1288" y="328" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">timestamptz</text>
+<rect x="1000" y="420" width="300" height="122" rx="12" fill="#fff" stroke="#3b6ea8" stroke-width="2"/>
+<path d="M1000,432 a12,12 0 0 1 12,-12 h276 a12,12 0 0 1 12,12 v28 h-300 z" fill="#3b6ea8"/>
+<text x="1014" y="447" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#fff" font-weight="800" text-anchor="start">team_members</text>
+<rect x="1010" y="464" width="28" height="17" rx="4" fill="#f2a93b"/>
+<text x="1024" y="477" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">PK</text>
+<text x="1046" y="477" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="700" text-anchor="start">team_id</text>
+<text x="1288" y="477" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<rect x="1010" y="488" width="28" height="17" rx="4" fill="#e8c6c0"/>
+<text x="1024" y="501" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">ID</text>
+<text x="1046" y="501" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">user_id</text>
+<text x="1288" y="501" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid (userId)</text>
+<text x="1046" y="525" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">joined_at</text>
+<text x="1288" y="525" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">timestamptz</text>
+<rect x="1000" y="575" width="300" height="266" rx="12" fill="#fff" stroke="#3b6ea8" stroke-width="2"/>
+<path d="M1000,587 a12,12 0 0 1 12,-12 h276 a12,12 0 0 1 12,12 v28 h-300 z" fill="#3b6ea8"/>
+<text x="1014" y="602" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#fff" font-weight="800" text-anchor="start">attempts</text>
+<rect x="1010" y="619" width="28" height="17" rx="4" fill="#f2a93b"/>
+<text x="1024" y="632" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">PK</text>
+<text x="1046" y="632" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="700" text-anchor="start">id</text>
+<text x="1288" y="632" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<rect x="1010" y="643" width="28" height="17" rx="4" fill="#9db2cf"/>
+<text x="1024" y="656" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">FK</text>
+<text x="1046" y="656" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">team_id</text>
+<text x="1288" y="656" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<rect x="1010" y="667" width="28" height="17" rx="4" fill="#9db2cf"/>
+<text x="1024" y="680" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">FK</text>
+<text x="1046" y="680" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">checkpoint_id</text>
+<text x="1288" y="680" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid</text>
+<rect x="1010" y="691" width="28" height="17" rx="4" fill="#e8c6c0"/>
+<text x="1024" y="704" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">ID</text>
+<text x="1046" y="704" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">user_id</text>
+<text x="1288" y="704" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">uuid (userId)</text>
+<text x="1046" y="728" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">submitted_answer</text>
+<text x="1288" y="728" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">varchar(200)</text>
+<text x="1046" y="752" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">latitude / longitude</text>
+<text x="1288" y="752" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">double</text>
+<text x="1046" y="776" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">distance_meters</text>
+<text x="1288" y="776" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">double</text>
+<text x="1046" y="800" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">is_success</text>
+<text x="1288" y="800" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">bool</text>
+<text x="1046" y="824" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="500" text-anchor="start">submitted_at</text>
+<text x="1288" y="824" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#6d746f" font-weight="400" text-anchor="end">timestamptz</text>
+<polyline points="770,369 770,450" fill="none" stroke="#3b6ea8" stroke-width="2"/>
+<text x="780" y="400" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#3b6ea8" font-weight="700" text-anchor="start">1 — n</text>
+<polyline points="920,240 1000,240" fill="none" stroke="#3b6ea8" stroke-width="2"/>
+<text x="940" y="230" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#3b6ea8" font-weight="700" text-anchor="start">1 — n</text>
+<polyline points="1150,345 1150,420" fill="none" stroke="#3b6ea8" stroke-width="2"/>
+<text x="1160" y="375" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#3b6ea8" font-weight="700" text-anchor="start">1 — n (max 5)</text>
+<polyline points="1300,227 1340,227 1340,656 1300,656" fill="none" stroke="#3b6ea8" stroke-width="2"/>
+<text x="1348" y="470" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#3b6ea8" font-weight="700" text-anchor="start">1 — n</text>
+<polyline points="920,520 960,520 960,680 1000,680" fill="none" stroke="#3b6ea8" stroke-width="2"/>
+<text x="965" y="600" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#3b6ea8" font-weight="700" text-anchor="start">1 — n</text>
+<rect x="1340" y="175" width="210" height="0" fill="none"/>
+<rect x="1340" y="720" width="215" height="230" rx="12" fill="#fff8e8" stroke="#f2a93b" stroke-width="2"/>
+<text x="1352" y="745" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#0f2a2e" font-weight="800" text-anchor="start">Contraintes clés</text>
+<text x="1352" y="770" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0f2a2e" font-weight="500" text-anchor="start">• Index unique partiel sur</text>
+<text x="1352" y="795" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0f2a2e" font-weight="500" text-anchor="start">  attempts(team_id, checkpoint_id)</text>
+<text x="1352" y="820" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0f2a2e" font-weight="500" text-anchor="start">  WHERE is_success</text>
+<text x="1352" y="845" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0f2a2e" font-weight="500" text-anchor="start">  → 1 seule validation / équipe</text>
+<text x="1352" y="870" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0f2a2e" font-weight="500" text-anchor="start">• PK composite team_members</text>
+<text x="1352" y="895" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0f2a2e" font-weight="500" text-anchor="start">• InviteCode unique</text>
+<text x="1352" y="920" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#0f2a2e" font-weight="500" text-anchor="start">• (quest_id, order) unique</text>
+<text x="600" y="935" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="1" fill="#0f2a2e" font-weight="400" text-anchor="start"></text>
+<rect x="595" y="890" width="720" height="60" rx="10" fill="#fff" stroke="#e8c6c0" stroke-width="2"/>
+<rect x="610" y="906" width="28" height="17" rx="4" fill="#e8c6c0"/><text x="624" y="919" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="10" fill="#0f2a2e" font-weight="800" text-anchor="middle">ID</text>
+<text x="650" y="919" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13.5" fill="#0f2a2e" font-weight="700" text-anchor="start">organizer_id, team_members.user_id, attempts.user_id = users.id de auth_db</text>
+<text x="650" y="940" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12.5" fill="#6d746f" font-weight="400" text-anchor="start">Simple identifiant copié du JWT : pas de jointure ni de clé étrangère entre les deux bases.</text>
+</svg>
